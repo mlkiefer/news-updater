@@ -1,5 +1,5 @@
-FROM python:3.10
-RUN groupadd -r nextcloud-news-updater && useradd -r -g nextcloud-news-updater nextcloud-news-updater
+FROM python:3.10-alpine
+RUN addgroup -S nextcloud-news-updater && adduser -S nextcloud-news-updater -G nextcloud-news-updater
 
 WORKDIR /usr/src/news-updater
 COPY . .
